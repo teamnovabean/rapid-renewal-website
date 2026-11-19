@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rapid Renewal</title>
+<meta name="description" content="Interior painting and home renovations across metro Atlanta, for homeowners and property managers. Free estimates: 404-908-7149.">
+<link rel="icon" href="assets/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,800&family=Barlow:wght@400;600&display=swap">
+<style>
+:root { color-scheme: dark; }
+html, body { margin: 0; background: #0e0e0d; }
+[hidden] { display: none !important; }
+.scroll-scrub{--ss-progress:0;position:relative;isolation:isolate;color:var(--ss-ink);background:var(--ss-bg)}
+.scroll-scrub__stage{position:sticky;top:0;z-index:0;width:100%;height:100vh;height:100dvh;overflow:hidden;background:var(--ss-bg)}
+.scroll-scrub__media,.scroll-scrub__layer,.scroll-scrub__picture,.scroll-scrub__poster,.scroll-scrub__video{position:absolute;inset:0;width:100%;height:100%}
+.scroll-scrub__media{z-index:0}
+.scroll-scrub__layer{margin:0;overflow:hidden;opacity:0;will-change:opacity}
+.scroll-scrub__layer:first-child{opacity:1}
+.scroll-scrub__poster,.scroll-scrub__video{display:block;object-fit:cover;object-position:var(--ss-object-position)}
+.scroll-scrub__poster{z-index:0}
+.scroll-scrub__video{z-index:1}
+.scroll-scrub__layer[data-video-painted="true"] .scroll-scrub__poster{visibility:hidden}
+.scroll-scrub__progress{position:absolute;z-index:5;top:0;right:0;left:0;height:2px;background:color-mix(in srgb,var(--ss-ink) 14%,transparent);pointer-events:none}
+.scroll-scrub__progress span{display:block;width:100%;height:100%;background:var(--ss-accent);transform:scaleX(var(--ss-progress));transform-origin:left center}
+.scroll-scrub__route{position:absolute;z-index:6;top:clamp(1rem,3vw,2rem);right:clamp(1rem,4vw,4rem);left:clamp(1rem,4vw,4rem);display:flex;justify-content:flex-end;gap:.25rem;pointer-events:auto}
+.scroll-scrub__route-button{min-height:2.75rem;padding:.65rem .9rem;border:0;color:var(--ss-muted);background:transparent;font:inherit;cursor:pointer}
+.scroll-scrub__route-button:hover,.scroll-scrub__route-button[aria-current="step"]{color:var(--ss-ink)}
+.scroll-scrub__route-button[aria-current="step"]{text-decoration:underline;text-decoration-color:var(--ss-accent);text-decoration-thickness:.15em;text-underline-offset:.3em}
+.scroll-scrub__route-button:focus-visible{outline:2px solid var(--ss-accent);outline-offset:3px}
+.scroll-scrub__story{position:relative;z-index:3;margin-top:-100vh;margin-top:-100dvh;pointer-events:none}
+.scroll-scrub__chapter{position:relative}
+.scroll-scrub__chapter-pin{position:sticky;top:0;display:flex;align-items:center;min-height:100vh;min-height:100dvh;padding:clamp(5rem,9vw,8rem) clamp(1.25rem,6vw,6rem);pointer-events:none}
+.scroll-scrub__chapter[data-align="right"] .scroll-scrub__chapter-pin{justify-content:flex-end}
+.scroll-scrub__copy{position:relative;width:min(40rem,48vw);pointer-events:auto}
+.scroll-scrub__copy::before{position:absolute;z-index:-1;inset:-3rem -5rem;content:"";background:radial-gradient(ellipse at center,color-mix(in srgb,var(--ss-bg) 88%,transparent) 0%,color-mix(in srgb,var(--ss-bg) 58%,transparent) 52%,transparent 76%);pointer-events:none}
+.scroll-scrub__title{max-width:13ch;margin:0;color:var(--ss-ink);font:inherit;font-size:clamp(2.75rem,6vw,6.75rem);font-weight:700;line-height:.94;letter-spacing:-.045em;text-wrap:balance}
+.scroll-scrub__body{max-width:42ch;margin:1.5rem 0 0;color:var(--ss-muted);font-size:clamp(1rem,1.35vw,1.2rem);line-height:1.55}
+.scroll-scrub__tags{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.5rem 0 0;padding:0;list-style:none}
+.scroll-scrub__tags li{padding:.45rem .7rem;border:1px solid color-mix(in srgb,var(--ss-ink) 20%,transparent);color:var(--ss-ink);font-size:.82rem}
+.scroll-scrub__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+@media (max-width:860px){
+.scroll-scrub__poster,.scroll-scrub__video{object-position:var(--ss-mobile-position)}
+.scroll-scrub__route{right:max(.75rem,env(safe-area-inset-right));left:max(.75rem,env(safe-area-inset-left));justify-content:flex-start;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.scroll-scrub__route-button{flex:0 0 auto}
+.scroll-scrub__chapter-pin,.scroll-scrub__chapter[data-align="right"] .scroll-scrub__chapter-pin{align-items:flex-end;justify-content:flex-start;padding:6.5rem max(1.25rem,env(safe-area-inset-right)) calc(4rem + env(safe-area-inset-bottom)) max(1.25rem,env(safe-area-inset-left))}
+.scroll-scrub__copy{width:min(100%,36rem)}
+.scroll-scrub__copy::before{inset:-3rem -2rem;background:linear-gradient(to top,var(--ss-bg) 0%,color-mix(in srgb,var(--ss-bg) 82%,transparent) 58%,transparent 100%)}
+.scroll-scrub__title{max-width:14ch;font-size:clamp(2.3rem,11vw,4.5rem)}
+}
+@media (prefers-reduced-motion:reduce){.scroll-scrub__chapter{min-height:100dvh!important}}
+
+/* Rapid Renewal site layer: Rapid Black + Renewal Yellow, Barlow Condensed display over Barlow body. */
+.rr-site {
+  --rr-bg: #0e0e0d;
+  --rr-surface: #181816;
+  --rr-surface-2: #22221f;
+  --rr-line: #33332f;
+  --rr-ink: #f4f3ef;
+  --rr-muted: #b9b7b0;
+  --rr-yellow: #ffc20e;
+  --rr-yellow-deep: #d9a200;
+  --rr-black: #111111;
+  --rr-mark-tile: var(--rr-yellow);
+  --rr-mark-ink: var(--rr-black);
+  --rr-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --rr-body: "Barlow", system-ui, sans-serif;
+  background: var(--rr-bg);
+  color: var(--rr-ink);
+  font-family: var(--rr-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rr-site a {
+  color: inherit;
+}
+
+.rr-site :focus-visible {
+  outline: 3px solid var(--rr-yellow);
+  outline-offset: 3px;
+}
+
+.rr-wrap {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 24px;
+}
+
+.rr-wordmark {
+  font-family: var(--rr-display);
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.rr-h2 {
+  font-family: var(--rr-display);
+  font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 0.98;
+  margin: 0;
+  max-width: 16ch;
+  padding-bottom: 0.08em;
+  text-wrap: balance;
+}
+
+.rr-h3 {
+  font-family: var(--rr-display);
+  font-size: 2.3rem;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin: 0;
+}
+
+.rr-h4 {
+  font-family: var(--rr-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.rr-muted {
+  color: var(--rr-muted);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.rr-lead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 34rem;
+}
+
+.rr-icon {
+  color: var(--rr-yellow);
+  flex: none;
+}
+
+.rr-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rr-checks li {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+}
+
+.rr-checks svg {
+  color: var(--rr-yellow);
+  flex: none;
+  margin-top: 4px;
+}
+
+/* Header: floats over the film, solid enough to read on any frame. */
+.rr-header {
+  align-items: center;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--rr-bg) 92%, transparent), transparent);
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  justify-content: space-between;
+  left: 0;
+  padding: 16px clamp(16px, 4vw, 48px) 28px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 40;
+}
+
+.rr-header__brand {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.rr-header__nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.98rem;
+  font-weight: 600;
+  gap: 6px 26px;
+}
+
+.rr-header__nav a {
+  text-decoration: none;
+}
+
+.rr-header__nav a:hover {
+  color: var(--rr-yellow);
+}
+
+.rr-header__phone {
+  align-items: center;
+  border: 1.5px solid color-mix(in srgb, var(--rr-yellow) 70%, transparent);
+  border-radius: 999px;
+  color: var(--rr-yellow);
+  display: inline-flex;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+
+.rr-site .rr-header__phone:hover {
+  background: var(--rr-yellow);
+  color: var(--rr-black);
+}
+
+@media (max-width: 720px) {
+  .rr-header__nav a:not(.rr-header__phone) {
+    display: none;
+  }
+  .rr-wordmark {
+    font-size: 1.3rem;
+  }
+}
+
+/* CTA 1: the estimate block. Yellow slab with a roofline notch. */
+.rr-estimate {
+  align-items: center;
+  background: var(--rr-yellow);
+  border-radius: 6px;
+  box-shadow: 0 1px 0 var(--rr-yellow-deep), 0 10px 24px color-mix(in srgb, var(--rr-yellow) 18%, transparent);
+  color: var(--rr-black) !important;
+  display: inline-flex;
+  font-family: var(--rr-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 26px 0 20px;
+  text-decoration: none;
+  transition: transform 160ms ease-out, background-color 160ms ease-out;
+}
+
+.rr-estimate__roof {
+  background: var(--rr-black);
+  clip-path: polygon(50% 0, 100% 70%, 84% 100%, 50% 42%, 16% 100%, 0 70%);
+  display: inline-block;
+  height: 12px;
+  width: 18px;
+}
+
+.rr-estimate:hover {
+  background: #ffcf3d;
+  transform: translateY(-2px);
+}
+
+.rr-estimate:active {
+  transform: translateY(0);
+}
+
+/* CTA 2: the phone line. Outline on the film, fills on hover. */
+.rr-call {
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--rr-ink) 75%, transparent);
+  display: inline-flex;
+  font-family: var(--rr-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 22px;
+  text-decoration: none;
+  transition: background-color 160ms ease-out, color 160ms ease-out;
+}
+
+.rr-site .rr-call:hover {
+  background: var(--rr-ink);
+  color: var(--rr-black);
+}
+
+/* Sections */
+.rr-section {
+  padding: clamp(80px, 11vw, 140px) 0;
+}
+
+.rr-services {
+  border-top: 1px solid var(--rr-line);
+}
+
+.rr-services__grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  margin-top: 48px;
+}
+
+.rr-service-feature {
+  background: var(--rr-surface);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.rr-service-feature__img,
+.rr-service-reno__img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.rr-service-feature__body {
+  display: grid;
+  gap: 18px 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding: 30px;
+}
+
+.rr-service-feature__head,
+.rr-service-reno__head {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  grid-column: 1 / -1;
+}
+
+.rr-services__side {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.rr-service-reno {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rr-service-reno__img {
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+}
+
+.rr-service-row {
+  border-top: 2px solid var(--rr-yellow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .rr-services__grid,
+  .rr-service-feature__body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Audience switch */
+.rr-audience {
+  background: var(--rr-surface);
+}
+
+.rr-audience__grid {
+  align-items: center;
+  display: grid;
+  gap: 56px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+}
+
+.rr-audience__copy {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.rr-tabs {
+  background: var(--rr-bg);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px var(--rr-line);
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 5px;
+}
+
+.rr-tab {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  color: var(--rr-muted);
+  cursor: pointer;
+  display: inline-flex;
+  font: 600 1rem var(--rr-body);
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 18px;
+  transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+
+.rr-tab:hover {
+  color: var(--rr-ink);
+}
+
+.rr-tab[aria-selected="true"] {
+  background: var(--rr-yellow);
+  color: var(--rr-black);
+}
+
+.rr-audience__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 15rem;
+}
+
+.rr-audience__img {
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .rr-audience__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rr-audience__panel {
+    min-height: 0;
+  }
+}
+
+/* Process: house-shaped step markers carry the logo's roofline. */
+.rr-steps {
+  display: grid;
+  gap: 40px 32px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 56px 0 0;
+  padding: 0;
+  position: relative;
+}
+
+.rr-steps::before {
+  background: var(--rr-line);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 38px;
+}
+
+.rr-step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.rr-step__num {
+  align-items: flex-end;
+  background: var(--rr-yellow);
+  clip-path: polygon(50% 0, 100% 42%, 100% 100%, 0 100%, 0 42%);
+  color: var(--rr-black);
+  display: flex;
+  font-family: var(--rr-display);
+  font-size: 1.9rem;
+  font-style: italic;
+  font-weight: 800;
+  height: 64px;
+  justify-content: center;
+  padding-bottom: 6px;
+  box-sizing: border-box;
+  width: 56px;
+}
+
+@media (max-width: 900px) {
+  .rr-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rr-steps::before {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .rr-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Areas band */
+.rr-areas {
+  background: var(--rr-yellow);
+  color: var(--rr-black);
+}
+
+.rr-areas .rr-icon {
+  color: var(--rr-black);
+}
+
+.rr-areas__row {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 28px;
+  padding-top: 28px;
+}
+
+.rr-areas__text {
+  font-family: var(--rr-display);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Estimate */
+.rr-estimate-section__grid {
+  align-items: start;
+  display: grid;
+  gap: 56px;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.rr-estimate-section__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rr-contact {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: 600;
+  gap: 12px;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.rr-contact li {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.rr-contact svg {
+  color: var(--rr-yellow);
+}
+
+.rr-form {
+  background: var(--rr-surface);
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1px var(--rr-line), 0 30px 60px rgba(0, 0, 0, 0.35);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: clamp(22px, 4vw, 36px);
+}
+
+.rr-form--done {
+  align-content: start;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.rr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rr-field--full {
+  grid-column: 1 / -1;
+}
+
+.rr-field label,
+.rr-admin__key label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.rr-field input,
+.rr-field select,
+.rr-field textarea,
+.rr-admin__key input {
+  background: var(--rr-bg);
+  border: 1.5px solid #4a4a45;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--rr-ink);
+  font: 400 1rem var(--rr-body);
+  min-height: 50px;
+  padding: 0 14px;
+  width: 100%;
+}
+
+.rr-field textarea {
+  min-height: 120px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.rr-field input:focus,
+.rr-field select:focus,
+.rr-field textarea:focus {
+  border-color: var(--rr-yellow);
+}
+
+.rr-field [aria-invalid="true"] {
+  border-color: #ff8a7a;
+}
+
+.rr-error {
+  color: #ff9d8f;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.rr-hp {
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+/* CTA 3: the form submit. Full-width slab with a pressed bottom edge. */
+.rr-submit {
+  background: var(--rr-yellow);
+  border: 0;
+  border-bottom: 4px solid var(--rr-yellow-deep);
+  border-radius: 8px;
+  color: var(--rr-black);
+  cursor: pointer;
+  font: 700 1.35rem var(--rr-display);
+  grid-column: 1 / -1;
+  min-height: 58px;
+  transition: transform 120ms ease-out, border-bottom-width 120ms ease-out;
+}
+
+.rr-submit:active {
+  border-bottom-width: 1px;
+  transform: translateY(3px);
+}
+
+.rr-submit:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .rr-estimate-section__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .rr-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Footer */
+.rr-footer {
+  border-top: 1px solid var(--rr-line);
+}
+
+.rr-footer__row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.rr-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 600;
+  gap: 8px 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rr-footer__legal {
+  color: var(--rr-muted);
+  flex: 1 1 100%;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Owner-only requests page */
+.rr-admin {
+  min-height: 100dvh;
+  padding: 64px 0;
+}
+
+.rr-admin__key {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0;
+  max-width: 560px;
+}
+
+.rr-admin__key input {
+  flex: 1 1 240px;
+}
+
+.rr-admin__go {
+  background: var(--rr-ink);
+  border: 0;
+  border-radius: 6px;
+  color: var(--rr-black);
+  cursor: pointer;
+  font: 600 1rem var(--rr-body);
+  min-height: 50px;
+  padding: 0 20px;
+}
+
+.rr-admin__table-wrap {
+  overflow-x: auto;
+}
+
+.rr-admin__table {
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 900px;
+  width: 100%;
+}
+
+.rr-admin__table th,
+.rr-admin__table td {
+  border-bottom: 1px solid var(--rr-line);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rr-admin__details {
+  max-width: 320px;
+  white-space: pre-wrap;
+}
+
+/* Journey copy sits under the fixed header. */
+.rr-site .scroll-scrub__title {
+  font-family: var(--rr-display);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 0.98;
+  padding-bottom: 0.08em;
+}
+
+.rr-site .scroll-scrub__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rr-site *,
+  .rr-site *::before,
+  .rr-site *::after {
+    transition: none !important;
+  }
+}
+
+.rr-ready { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 14px; }
+.rr-ready pre { margin: 0; white-space: pre-wrap; background: var(--rr-bg); border: 1px solid var(--rr-line); border-radius: 8px; padding: 16px; font: 400 0.95rem/1.5 var(--rr-body); color: var(--rr-ink); max-height: 260px; overflow: auto; }
+.rr-ready__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.rr-mail { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; border-radius: 6px; background: var(--rr-ink); color: var(--rr-black) !important; text-decoration: none; font-weight: 600; }
+.rr-copy { min-height: 48px; padding: 0 18px; border-radius: 6px; border: 1.5px solid var(--rr-line); background: transparent; color: var(--rr-ink); font: 600 1rem var(--rr-body); cursor: pointer; }
+.rr-copy:hover { border-color: var(--rr-yellow); }
+@media (min-width: 861px) { .rr-site .scroll-scrub__route { top: 84px; } }
+@media (max-width: 860px) { .rr-site .scroll-scrub__route { top: 72px; } }
+.rr-edit { background: none; border: 0; color: var(--rr-muted); text-decoration: underline; font: 500 0.95rem var(--rr-body); cursor: pointer; padding: 0; align-self: flex-start; }
+</style>
+</head>
+<body>
+<div class="rr-site">
+<header class="rr-header">
+<a aria-label="Rapid Renewal home" class="rr-header__brand" href="#the-job"><svg aria-hidden="true" height="40" viewBox="0 0 100 100" width="40"><rect fill="var(--rr-mark-tile)" height="100" rx="18" width="100"/><polyline fill="none" points="22,36 50,15 78,36" stroke="var(--rr-mark-ink)" stroke-linecap="square" stroke-linejoin="miter" stroke-width="7"/><path d="M34.7237687366167 86.42 32.533190578158454 71.05Q32.46680942184154 70.818 32.20128479657387 70.818H31.271948608137045Q31.00642398286938 70.818 30.873661670235542 71.108L28.749464668094216 86.304Q28.683083511777298 86.594 28.450749464668093 86.797Q28.218415417558884 87.0 27.886509635974303 87.0H18.725910064239827Q18.394004282655246 87.0 18.194860813704494 86.797Q17.995717344753746 86.594 18.062098501070665 86.304L23.571734475374733 47.096Q23.638115631691647 46.806 23.870449678800856 46.602999999999994Q24.102783725910065 46.4 24.434689507494646 46.4H38.30835117773019Q43.41970021413276 46.4 46.37366167023554 49.242Q49.327623126338324 52.083999999999996 49.327623126338324 56.84Q49.327623126338324 58.232 49.194860813704494 58.986Q48.73019271948608 62.233999999999995 47.03747323340471 64.815Q45.34475374732334 67.396 42.75588865096359 68.962Q42.623126338329755 69.02 42.55674518201284 69.107Q42.490364025695925 69.194 42.55674518201285 69.31L45.67665952890792 86.188V86.304Q45.67665952890792 87.0 44.946466809421835 87.0H35.5203426124197Q34.79014989293361 87.0 34.7237687366167 86.42ZM33.13062098501071 54.925999999999995 32.00214132762312 63.162Q32.00214132762312 63.452 32.26766595289079 63.452H34.05995717344753Q36.05139186295503 63.452 37.312633832976445 62.031Q38.573875802997854 60.61 38.573875802997854 58.116Q38.573875802997854 56.434 37.71092077087794 55.535Q36.84796573875803 54.635999999999996 35.321199143468945 54.635999999999996H33.528907922912204Q33.26338329764454 54.635999999999996 33.13062098501071 54.925999999999995Z" fill="var(--rr-mark-ink)"/><path d="M67.7237687366167 86.42 65.53319057815845 71.05Q65.46680942184153 70.818 65.20128479657387 70.818H64.27194860813704Q64.00642398286938 70.818 63.87366167023554 71.108L61.74946466809422 86.304Q61.6830835117773 86.594 61.45074946466809 86.797Q61.21841541755889 87.0 60.886509635974306 87.0H51.72591006423983Q51.394004282655246 87.0 51.194860813704494 86.797Q50.99571734475375 86.594 51.062098501070665 86.304L56.57173447537473 47.096Q56.63811563169165 46.806 56.87044967880085 46.602999999999994Q57.102783725910065 46.4 57.434689507494646 46.4H71.30835117773019Q76.41970021413276 46.4 79.37366167023555 49.242Q82.32762312633832 52.083999999999996 82.32762312633832 56.84Q82.32762312633832 58.232 82.1948608137045 58.986Q81.73019271948607 62.233999999999995 80.03747323340471 64.815Q78.34475374732334 67.396 75.75588865096358 68.962Q75.62312633832975 69.02 75.55674518201283 69.107Q75.49036402569592 69.194 75.55674518201285 69.31L78.67665952890792 86.188V86.304Q78.67665952890792 87.0 77.94646680942184 87.0H68.5203426124197Q67.79014989293361 87.0 67.7237687366167 86.42ZM66.13062098501071 54.925999999999995 65.00214132762312 63.162Q65.00214132762312 63.452 65.2676659528908 63.452H67.05995717344753Q69.05139186295503 63.452 70.31263383297645 62.031Q71.57387580299786 60.61 71.57387580299786 58.116Q71.57387580299786 56.434 70.71092077087795 55.535Q69.84796573875803 54.635999999999996 68.32119914346895 54.635999999999996H66.5289079229122Q66.26338329764454 54.635999999999996 66.13062098501071 54.925999999999995Z" fill="var(--rr-mark-ink)"/></svg><span class="rr-wordmark">Rapid Renewal</span></a>
+<nav aria-label="Main" class="rr-header__nav">
+<a href="#services">Services</a><a href="#process">How it works</a><a href="#estimate">Estimate</a>
+<a class="rr-header__phone" href="tel:+14049087149"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>404-908-7149</a>
+</nav>
+</header>
+<main>
+<section class="scroll-scrub" id="journey" style="--ss-accent:#FFC20E;--ss-bg:#0E0E0D;--ss-ink:#F4F3EF;--ss-muted:#B9B7B0">
+<div class="scroll-scrub__stage">
+<div aria-hidden="true" class="scroll-scrub__media"><figure class="scroll-scrub__layer" data-scroll-scrub-layer=""><picture class="scroll-scrub__picture"><source media="(hover: none) and (pointer: coarse), (max-width: 860px)" srcset="assets/world/scene-01-mobile-poster.jpg"><img alt="" class="scroll-scrub__poster" decoding="async" fetchpriority="high" loading="eager" src="assets/world/scene-01-poster.jpg"></picture></figure><figure class="scroll-scrub__layer" data-scroll-scrub-layer=""><picture class="scroll-scrub__picture"><source media="(hover: none) and (pointer: coarse), (max-width: 860px)" srcset="assets/world/scene-02-mobile-poster.jpg"><img alt="" class="scroll-scrub__poster" decoding="async" loading="lazy" src="assets/world/scene-02-poster.jpg"></picture></figure><figure class="scroll-scrub__layer" data-scroll-scrub-layer=""><picture class="scroll-scrub__picture"><source media="(hover: none) and (pointer: coarse), (max-width: 860px)" srcset="assets/world/scene-03-mobile-poster.jpg"><img alt="" class="scroll-scrub__poster" decoding="async" loading="lazy" src="assets/world/scene-03-poster.jpg"></picture></figure><figure class="scroll-scrub__layer" data-scroll-scrub-layer=""><picture class="scroll-scrub__picture"><source media="(hover: none) and (pointer: coarse), (max-width: 860px)" srcset="assets/world/scene-04-mobile-poster.jpg"><img alt="" class="scroll-scrub__poster" decoding="async" loading="lazy" src="assets/world/scene-04-poster.jpg"></picture></figure><figure class="scroll-scrub__layer" data-scroll-scrub-layer=""><picture class="scroll-scrub__picture"><source media="(hover: none) and (pointer: coarse), (max-width: 860px)" srcset="assets/world/scene-05-mobile-poster.jpg"><img alt="" class="scroll-scrub__poster" decoding="async" loading="lazy" src="assets/world/scene-05-poster.jpg"></picture></figure><figure class="scroll-scrub__layer" data-scroll-scrub-layer=""><picture class="scroll-scrub__picture"><source media="(hover: none) and (pointer: coarse), (max-width: 860px)" srcset="assets/world/scene-06-mobile-poster.jpg"><img alt="" class="scroll-scrub__poster" decoding="async" loading="lazy" src="assets/world/scene-06-poster.jpg"></picture></figure><figure class="scroll-scrub__layer" data-scroll-scrub-layer=""><picture class="scroll-scrub__picture"><source media="(hover: none) and (pointer: coarse), (max-width: 860px)" srcset="assets/world/scene-07-mobile-poster.jpg"><img alt="" class="scroll-scrub__poster" decoding="async" loading="lazy" src="assets/world/scene-07-poster.jpg"></picture></figure></div>
+<div aria-hidden="true" class="scroll-scrub__progress"><span></span></div>
+<nav aria-label="Scroll chapters" class="scroll-scrub__route"><button class="scroll-scrub__route-button" type="button" data-jump="0" aria-current="step"><span>The job</span></button><button class="scroll-scrub__route-button" type="button" data-jump="1"><span>The prep</span></button><button class="scroll-scrub__route-button" type="button" data-jump="2"><span>The finish</span></button><button class="scroll-scrub__route-button" type="button" data-jump="3"><span>Bathrooms</span></button><button class="scroll-scrub__route-button" type="button" data-jump="4"><span>The reveal</span></button><button class="scroll-scrub__route-button" type="button" data-jump="5"><span>Neutrals</span></button><button class="scroll-scrub__route-button" type="button" data-jump="6"><span>Even coats</span></button></nav>
+</div>
+<div class="scroll-scrub__story"><article class="scroll-scrub__chapter" data-align="left" data-scroll-scrub-band="" id="the-job" style="min-height:160vh;min-height:160dvh"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy"><h1 class="scroll-scrub__title">Patched, painted and renovated. On schedule.</h1><p class="scroll-scrub__body">Interior painting and home renovations across metro Atlanta, for homeowners and property managers.</p><div class="scroll-scrub__actions"><a class="rr-estimate rr-estimate--hero" href="#estimate"><span class="rr-estimate__roof" aria-hidden="true"></span>Get a free estimate</a><a class="rr-call" href="tel:+14049087149"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Call 404-908-7149</a></div></div></div></article><article class="scroll-scrub__chapter" data-align="left" data-scroll-scrub-band="" id="the-prep" style="min-height:160vh;min-height:160dvh"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy"><h2 class="scroll-scrub__title">Prep is most of the job</h2><p class="scroll-scrub__body">Patching, sanding and covering every floor before a drop of paint goes on. It is why the finish lasts.</p><ul class="scroll-scrub__tags"><li>Drywall repair</li><li>Surface prep</li><li>Floors protected</li></ul></div></div></article><article class="scroll-scrub__chapter" data-align="right" data-scroll-scrub-band="" id="the-finish" style="min-height:180vh;min-height:180dvh"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy"><h2 class="scroll-scrub__title">Then we hand it back finished</h2><p class="scroll-scrub__body">Clean lines, crisp trim and a final walkthrough with you before the last invoice.</p><div class="scroll-scrub__actions"><a class="rr-estimate rr-estimate--finish" href="#estimate"><span class="rr-estimate__roof" aria-hidden="true"></span>Get a free estimate</a></div></div></div></article><article class="scroll-scrub__chapter" data-align="left" data-scroll-scrub-band="" id="bathrooms" style="min-height:160vh;min-height:160dvh"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy"><h2 class="scroll-scrub__title">Bathrooms, down to the studs</h2><p class="scroll-scrub__body">We take the old room out completely and rebuild it, from the framing and waterproofing to the last tile.</p><ul class="scroll-scrub__tags"><li>Demo</li><li>Waterproofing</li><li>Tile</li></ul></div></div></article><article class="scroll-scrub__chapter" data-align="right" data-scroll-scrub-band="" id="the-reveal" style="min-height:160vh;min-height:160dvh"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy"><h2 class="scroll-scrub__title">Back as the best room in the house</h2><p class="scroll-scrub__body">Clean tile, clear glass and warm light. Sealed, cleaned and ready before you step in.</p></div></div></article><article class="scroll-scrub__chapter" data-align="left" data-scroll-scrub-band="" id="neutrals" style="min-height:160vh;min-height:160dvh"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy"><h2 class="scroll-scrub__title">Color that fits the house</h2><p class="scroll-scrub__body">Not every room should go dark. We help you pick the right neutral and get it even, wall to wall.</p><ul class="scroll-scrub__tags"><li>Color help</li><li>Primer</li><li>Two coats</li></ul></div></div></article><article class="scroll-scrub__chapter" data-align="right" data-scroll-scrub-band="" id="even-coats" style="min-height:180vh;min-height:180dvh"><div class="scroll-scrub__chapter-pin"><div class="scroll-scrub__copy"><h2 class="scroll-scrub__title">Calm, even and done right</h2><p class="scroll-scrub__body">Sharp cut lines, clean trim and touch-ups checked in daylight before we call it finished.</p><div class="scroll-scrub__actions"><a class="rr-estimate rr-estimate--finish" href="#estimate"><span class="rr-estimate__roof" aria-hidden="true"></span>Get a free estimate</a></div></div></div></article></div>
+</section>
+
+<section aria-labelledby="services-title" class="rr-section rr-services" id="services">
+<div class="rr-wrap">
+<h2 class="rr-h2" id="services-title">What we take on</h2>
+<div class="rr-services__grid">
+<article class="rr-service-feature">
+<img alt="A roller laying charcoal paint up to crisp white trim" class="rr-service-feature__img" height="900" loading="lazy" src="assets/img/painting.jpg" width="1200">
+<div class="rr-service-feature__body">
+<div class="rr-service-feature__head"><svg class="rr-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="6" x="2" y="2" rx="2"/><path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect width="4" height="6" x="8" y="16" rx="1"/></svg><h3 class="rr-h3">Interior painting</h3></div>
+<p class="rr-muted">Single rooms or whole homes. Floors and furniture covered, walls prepped, lines kept clean.</p>
+<ul class="rr-checks"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Walls, ceilings, trim and doors</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Drywall patching and prep</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Turnover repaints between tenants</li></ul>
+</div>
+</article>
+<div class="rr-services__side">
+<article class="rr-service-reno">
+<img alt="A finished kitchen with charcoal cabinets and oak shelves" class="rr-service-reno__img" height="900" loading="lazy" src="assets/img/kitchen.jpg" width="1200">
+<div class="rr-service-reno__head"><svg class="rr-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg><h3 class="rr-h3">Renovations</h3></div>
+<p class="rr-muted">Kitchen, bath and whole-room updates planned in phases, so you know what happens when and what each phase costs.</p>
+</article>
+<article class="rr-service-row">
+<h3 class="rr-h4">Decks and outdoor</h3>
+<p class="rr-muted">New decking and repairs, coordinated with the rest of your project.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="audience-title" class="rr-section rr-audience">
+<div class="rr-wrap rr-audience__grid">
+<div class="rr-audience__copy">
+<h2 class="rr-h2" id="audience-title">Same crew. Different needs.</h2>
+<div aria-label="Choose who you are" class="rr-tabs" role="tablist">
+<button aria-controls="audience-panel" aria-selected="true" class="rr-tab" id="tab-home" role="tab" type="button" data-who="home"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> I own my home</button>
+<button aria-controls="audience-panel" aria-selected="false" class="rr-tab" id="tab-rentals" role="tab" type="button" data-who="rentals" tabindex="-1"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg> I manage rentals</button>
+</div>
+<div aria-labelledby="tab-home" class="rr-audience__panel" id="audience-panel" role="tabpanel">
+<div data-panel="home">
+<p class="rr-lead">You live here, so the work has to fit around you. We walk the space with you, agree the scope in writing and keep the mess contained.</p>
+<ul class="rr-checks" style="margin-top:18px"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> A walkthrough before any price</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Daily cleanup, furniture protected</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> A final walkthrough before the last invoice</li></ul>
+</div>
+<div data-panel="rentals" hidden>
+<p class="rr-lead">Every vacant day costs you. We turn units around between tenants and bill each property separately, so your books stay clean.</p>
+<ul class="rr-checks" style="margin-top:18px"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Turnover repaints and make-ready updates</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> An itemized invoice per property address</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Repeat work across your portfolio</li></ul>
+</div>
+</div>
+<a class="rr-estimate rr-estimate--audience" href="#estimate"><span class="rr-estimate__roof" aria-hidden="true"></span>Get a free estimate</a>
+</div>
+<div class="rr-audience__media">
+<img alt="A finished living room with charcoal walls" class="rr-audience__img" id="audience-img" height="1250" loading="lazy" src="assets/img/finished-room.jpg" width="1000">
+</div>
+</div>
+</section>
+
+<section aria-labelledby="process-title" class="rr-section rr-process" id="process">
+<div class="rr-wrap">
+<h2 class="rr-h2" id="process-title">From first call to final walkthrough</h2>
+<ol class="rr-steps">
+<li class="rr-step"><span aria-hidden="true" class="rr-step__num">1</span><h3 class="rr-h4">Tell us about it</h3><p class="rr-muted">Call, email or send the form. A few lines and some photos are enough to start.</p></li>
+<li class="rr-step"><span aria-hidden="true" class="rr-step__num">2</span><h3 class="rr-h4">Walkthrough</h3><p class="rr-muted">We visit, measure and talk through options and finishes with you.</p></li>
+<li class="rr-step"><span aria-hidden="true" class="rr-step__num">3</span><h3 class="rr-h4">Written estimate</h3><p class="rr-muted">An itemized price and a start date. A deposit books your spot.</p></li>
+<li class="rr-step"><span aria-hidden="true" class="rr-step__num">4</span><h3 class="rr-h4">Work and sign-off</h3><p class="rr-muted">We work to the schedule, then walk it with you before the final invoice.</p></li>
+</ol>
+</div>
+</section>
+
+<section aria-label="Where we work" class="rr-areas">
+<div class="rr-wrap rr-areas__row"><svg class="rr-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><p class="rr-areas__text">Working across metro Atlanta, from Jonesboro to Acworth and the communities in between.</p></div>
+</section>
+
+<section aria-labelledby="estimate-title" class="rr-section rr-estimate-section" id="estimate">
+<div class="rr-wrap rr-estimate-section__grid">
+<div class="rr-estimate-section__copy">
+<h2 class="rr-h2" id="estimate-title">Get a free estimate</h2>
+<p class="rr-muted">Tell us what you have in mind. We'll call you back to set up a walkthrough.</p>
+<ul class="rr-contact">
+<li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><a href="tel:+14049087149">404-908-7149</a></li>
+<li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><a href="mailto:info@rapid-renewal.com">info@rapid-renewal.com</a></li>
+</ul>
+</div>
+<form aria-label="Estimate request" class="rr-form" id="estimate-form" novalidate>
+<div class="rr-field"><label for="f-name">Your name</label><input autocomplete="name" id="f-name" name="name" type="text" aria-describedby="e-name"><p class="rr-error" id="e-name" hidden></p></div>
+<div class="rr-field"><label for="f-phone">Phone</label><input autocomplete="tel" id="f-phone" name="phone" type="tel" aria-describedby="e-phone"><p class="rr-error" id="e-phone" hidden></p></div>
+<div class="rr-field"><label for="f-email">Email (optional)</label><input autocomplete="email" id="f-email" name="email" type="email" aria-describedby="e-email"><p class="rr-error" id="e-email" hidden></p></div>
+<div class="rr-field"><label for="f-type">I'm a</label><select id="f-type" name="clientType"><option>Homeowner</option><option>Property manager or landlord</option></select></div>
+<div class="rr-field"><label for="f-service">What do you need?</label><select id="f-service" name="service"><option>Interior painting</option><option>Renovation</option><option>Decks and outdoor</option><option>Not sure yet</option></select></div>
+<div class="rr-field"><label for="f-area">Property address or area</label><input autocomplete="street-address" id="f-area" name="area" type="text"></div>
+<div class="rr-field rr-field--full"><label for="f-details">Project details</label><textarea id="f-details" name="details" rows="4"></textarea></div>
+<button class="rr-submit" type="submit">Request my estimate</button>
+<div class="rr-ready" id="ready" hidden>
+<h3 class="rr-h3"><svg class="rr-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Your request is ready</h3>
+<p class="rr-muted">Send it by email to info@rapid-renewal.com, or call 404-908-7149 and we'll take it from there.</p>
+<pre id="ready-text"></pre>
+<div class="rr-ready__actions"><a class="rr-mail" id="mail-link" href="mailto:info@rapid-renewal.com"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>Send by email</a><button class="rr-copy" id="copy-btn" type="button">Copy request</button></div>
+<p class="rr-muted" id="copy-status" role="status"></p>
+<button class="rr-edit" id="edit-btn" type="button">Edit details</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<footer class="rr-footer">
+<div class="rr-wrap rr-footer__row">
+<div class="rr-header__brand"><svg aria-hidden="true" height="36" viewBox="0 0 100 100" width="36"><rect fill="var(--rr-mark-tile)" height="100" rx="18" width="100"/><polyline fill="none" points="22,36 50,15 78,36" stroke="var(--rr-mark-ink)" stroke-linecap="square" stroke-linejoin="miter" stroke-width="7"/><path d="M34.7237687366167 86.42 32.533190578158454 71.05Q32.46680942184154 70.818 32.20128479657387 70.818H31.271948608137045Q31.00642398286938 70.818 30.873661670235542 71.108L28.749464668094216 86.304Q28.683083511777298 86.594 28.450749464668093 86.797Q28.218415417558884 87.0 27.886509635974303 87.0H18.725910064239827Q18.394004282655246 87.0 18.194860813704494 86.797Q17.995717344753746 86.594 18.062098501070665 86.304L23.571734475374733 47.096Q23.638115631691647 46.806 23.870449678800856 46.602999999999994Q24.102783725910065 46.4 24.434689507494646 46.4H38.30835117773019Q43.41970021413276 46.4 46.37366167023554 49.242Q49.327623126338324 52.083999999999996 49.327623126338324 56.84Q49.327623126338324 58.232 49.194860813704494 58.986Q48.73019271948608 62.233999999999995 47.03747323340471 64.815Q45.34475374732334 67.396 42.75588865096359 68.962Q42.623126338329755 69.02 42.55674518201284 69.107Q42.490364025695925 69.194 42.55674518201285 69.31L45.67665952890792 86.188V86.304Q45.67665952890792 87.0 44.946466809421835 87.0H35.5203426124197Q34.79014989293361 87.0 34.7237687366167 86.42ZM33.13062098501071 54.925999999999995 32.00214132762312 63.162Q32.00214132762312 63.452 32.26766595289079 63.452H34.05995717344753Q36.05139186295503 63.452 37.312633832976445 62.031Q38.573875802997854 60.61 38.573875802997854 58.116Q38.573875802997854 56.434 37.71092077087794 55.535Q36.84796573875803 54.635999999999996 35.321199143468945 54.635999999999996H33.528907922912204Q33.26338329764454 54.635999999999996 33.13062098501071 54.925999999999995Z" fill="var(--rr-mark-ink)"/><path d="M67.7237687366167 86.42 65.53319057815845 71.05Q65.46680942184153 70.818 65.20128479657387 70.818H64.27194860813704Q64.00642398286938 70.818 63.87366167023554 71.108L61.74946466809422 86.304Q61.6830835117773 86.594 61.45074946466809 86.797Q61.21841541755889 87.0 60.886509635974306 87.0H51.72591006423983Q51.394004282655246 87.0 51.194860813704494 86.797Q50.99571734475375 86.594 51.062098501070665 86.304L56.57173447537473 47.096Q56.63811563169165 46.806 56.87044967880085 46.602999999999994Q57.102783725910065 46.4 57.434689507494646 46.4H71.30835117773019Q76.41970021413276 46.4 79.37366167023555 49.242Q82.32762312633832 52.083999999999996 82.32762312633832 56.84Q82.32762312633832 58.232 82.1948608137045 58.986Q81.73019271948607 62.233999999999995 80.03747323340471 64.815Q78.34475374732334 67.396 75.75588865096358 68.962Q75.62312633832975 69.02 75.55674518201283 69.107Q75.49036402569592 69.194 75.55674518201285 69.31L78.67665952890792 86.188V86.304Q78.67665952890792 87.0 77.94646680942184 87.0H68.5203426124197Q67.79014989293361 87.0 67.7237687366167 86.42ZM66.13062098501071 54.925999999999995 65.00214132762312 63.162Q65.00214132762312 63.452 65.2676659528908 63.452H67.05995717344753Q69.05139186295503 63.452 70.31263383297645 62.031Q71.57387580299786 60.61 71.57387580299786 58.116Q71.57387580299786 56.434 70.71092077087795 55.535Q69.84796573875803 54.635999999999996 68.32119914346895 54.635999999999996H66.5289079229122Q66.26338329764454 54.635999999999996 66.13062098501071 54.925999999999995Z" fill="var(--rr-mark-ink)"/></svg><span class="rr-wordmark">Rapid Renewal</span></div>
+<ul class="rr-footer__links"><li>Atlanta, GA</li><li><a href="tel:+14049087149">404-908-7149</a></li><li><a href="mailto:info@rapid-renewal.com">info@rapid-renewal.com</a></li></ul>
+<p class="rr-footer__legal">© 2026 Rapid Renewal, LLC</p>
+</div>
+</footer>
+</div>
+<script>
+window.RR_SCENES = [{"clip": "assets/world/scene-01.mp4", "mobile": "assets/world/scene-01-mobile.mp4"}, {"clip": "assets/world/scene-02.mp4", "mobile": "assets/world/scene-02-mobile.mp4"}, {"clip": "assets/world/scene-03.mp4", "mobile": "assets/world/scene-03-mobile.mp4"}, {"clip": "assets/world/scene-04.mp4", "mobile": "assets/world/scene-04-mobile.mp4"}, {"clip": "assets/world/scene-05.mp4", "mobile": "assets/world/scene-05-mobile.mp4"}, {"clip": "assets/world/scene-06.mp4", "mobile": "assets/world/scene-06-mobile.mp4"}, {"clip": "assets/world/scene-07.mp4", "mobile": "assets/world/scene-07-mobile.mp4"}];
+(function () {
+  "use strict";
+  // ---- Scroll scrub: the visitor's scroll plays the film, segment by segment. ----
+  var root = document.getElementById("journey");
+  var SCENES = window.RR_SCENES;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var mobileQuery = window.matchMedia("(hover: none) and (pointer: coarse), (max-width: 860px)");
+  var layers = root.querySelectorAll("[data-scroll-scrub-layer]");
+  var bands = root.querySelectorAll("[data-scroll-scrub-band]");
+  var buttons = root.querySelectorAll("[data-jump]");
+  function clamp(v, a, b) { if (a == null) { a = 0; b = 1; } return Math.max(a, Math.min(b, v)); }
+  function smoothstep(x) { var t = clamp(x); return t * t * (3 - 2 * t); }
+
+  var segs = SCENES.map(function (s, i) {
+    return { src: s, layer: layers[i], band: bands[i], start: 0, end: 1, target: 0, current: 0, visible: i === 0, ready: false, loading: false, video: null, url: null, source: null };
+  });
+  var rootTop = 0, total = 1, vh = window.innerHeight, active = 0, dirty = true;
+
+  function sourceFor(seg) { return mobileQuery.matches ? seg.src.mobile : seg.src.clip; }
+
+  function unload(seg) {
+    if (seg.video) seg.video.remove();
+    if (seg.url) URL.revokeObjectURL(seg.url);
+    seg.video = null; seg.url = null; seg.source = null; seg.ready = false; seg.loading = false;
+    delete seg.layer.dataset.videoPainted;
+  }
+
+  function load(seg) {
+    if (reduceMotion || seg.loading || seg.ready) return;
+    var source = sourceFor(seg);
+    seg.loading = true;
+    fetch(source).then(function (r) { if (!r.ok) throw new Error("clip"); return r.blob(); }).then(function (blob) {
+      if (sourceFor(seg) !== source) { seg.loading = false; return; }
+      var url = URL.createObjectURL(blob);
+      var v = document.createElement("video");
+      v.className = "scroll-scrub__video";
+      v.muted = true; v.defaultMuted = true; v.playsInline = true;
+      v.setAttribute("playsinline", ""); v.setAttribute("muted", ""); v.setAttribute("aria-hidden", "true");
+      v.preload = "auto"; v.disablePictureInPicture = true;
+      v.addEventListener("loadeddata", function () {
+        seg.ready = true; seg.loading = false;
+        try { v.currentTime = Math.max(0.001, seg.current * (v.duration || 1)); } catch (e) {}
+        dirty = true;
+      }, { once: true });
+      v.addEventListener("seeked", function () { seg.layer.dataset.videoPainted = "true"; });
+      v.addEventListener("error", function () { seg.loading = false; });
+      v.src = url;
+      seg.url = url; seg.video = v; seg.source = source;
+      seg.layer.appendChild(v);
+      if (mobileQuery.matches) { var p = v.play(); if (p && p.then) p.then(function () { v.pause(); }, function () {}); }
+    }).catch(function () { seg.loading = false; });
+  }
+
+  function layout() {
+    var y = window.scrollY || window.pageYOffset;
+    rootTop = root.getBoundingClientRect().top + y;
+    vh = window.innerHeight;
+    segs.forEach(function (seg) {
+      if (seg.source && seg.source !== sourceFor(seg)) unload(seg);
+      var r = seg.band.getBoundingClientRect();
+      seg.start = r.top + y - rootTop; seg.end = seg.start + r.height;
+    });
+    total = Math.max(segs[segs.length - 1].end, vh);
+    dirty = true;
+  }
+
+  function readScroll() {
+    var y = clamp((window.scrollY || window.pageYOffset) - rootTop, 0, total);
+    var crossfade = 0.1 * vh, current = 0;
+    segs.forEach(function (seg, i) {
+      if (y >= seg.start) current = i;
+      seg.target = clamp((y - seg.start) / Math.max(seg.end - seg.start, 1));
+      var outside = y < seg.start ? seg.start - y : y > seg.end ? y - seg.end : 0;
+      var op = reduceMotion ? (outside === 0 ? 1 : 0) : smoothstep(1 - outside / Math.max(crossfade, 1));
+      seg.visible = op > 0.001;
+      seg.layer.style.opacity = String(op);
+      if (y > seg.start - 1.5 * vh && y < seg.end + 1.5 * vh) load(seg);
+    });
+    segs.forEach(function (seg, i) { seg.layer.style.zIndex = i === current ? "2" : "1"; });
+    if (current !== active) {
+      active = current;
+      Array.prototype.forEach.call(buttons, function (b, i) { if (i === active) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
+    }
+    root.style.setProperty("--ss-progress", String(clamp(y / total)));
+  }
+
+  function updateVideos() {
+    segs.forEach(function (seg) {
+      var v = seg.video;
+      if (!v || !seg.ready || v.seeking) return;
+      if (!seg.visible && Math.abs(seg.current - seg.target) < 0.002) return;
+      seg.current += (seg.target - seg.current) * 0.2;
+      var t = clamp(seg.current, 0, 0.999) * (v.duration || 1);
+      var eps = mobileQuery.matches ? 0.02 : 0.008;
+      if (Math.abs(v.currentTime - t) > eps) { try { v.currentTime = t; } catch (e) {} }
+    });
+  }
+
+  function tick() {
+    if (dirty) { readScroll(); dirty = false; }
+    updateVideos();
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener("scroll", function () { dirty = true; }, { passive: true });
+  window.addEventListener("resize", layout);
+  if (window.ResizeObserver) new ResizeObserver(layout).observe(root);
+  if (mobileQuery.addEventListener) mobileQuery.addEventListener("change", layout);
+  window.addEventListener("load", layout);
+  Array.prototype.forEach.call(buttons, function (b) {
+    b.addEventListener("click", function () {
+      var seg = segs[Number(b.getAttribute("data-jump"))];
+      window.scrollTo({ top: rootTop + seg.start + 1, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  });
+  layout(); readScroll(); requestAnimationFrame(tick);
+
+  // ---- Audience switch ----
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".rr-tab"));
+  var panel = document.getElementById("audience-panel");
+  var img = document.getElementById("audience-img");
+  function pick(tab) {
+    var home = tab.getAttribute("data-who") === "home";
+    tabs.forEach(function (t) { var on = t === tab; t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1; });
+    panel.setAttribute("aria-labelledby", tab.id);
+    panel.querySelector('[data-panel="home"]').hidden = !home;
+    panel.querySelector('[data-panel="rentals"]').hidden = home;
+    img.src = home ? "assets/img/finished-room.jpg" : "assets/img/rental.jpg";
+    img.alt = home ? "A finished living room with charcoal walls" : "A freshly painted rental unit with keys on the counter";
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { pick(t); });
+    t.addEventListener("keydown", function (e) {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      var n = tabs[(i + 1) % tabs.length]; pick(n); n.focus(); e.preventDefault();
+    });
+  });
+
+  // ---- Estimate form: prepares the request to send by email or phone ----
+  var form = document.getElementById("estimate-form");
+  var ready = document.getElementById("ready");
+  var readyText = document.getElementById("ready-text");
+  var mailLink = document.getElementById("mail-link");
+  var copyStatus = document.getElementById("copy-status");
+  var parts = Array.prototype.slice.call(form.querySelectorAll(".rr-field, .rr-submit"));
+  function val(id) { return document.getElementById("f-" + id).value.trim(); }
+  function setError(id, msg) {
+    var input = document.getElementById("f-" + id), err = document.getElementById("e-" + id);
+    input.setAttribute("aria-invalid", msg ? "true" : "false");
+    err.textContent = msg || ""; err.hidden = !msg;
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var ok = true;
+    if (!val("name")) { setError("name", "Add your name."); ok = false; } else setError("name");
+    if (val("phone").replace(/\D/g, "").length < 7) { setError("phone", "Add a phone number we can call."); ok = false; } else setError("phone");
+    if (val("email") && !/^\S+@\S+\.\S+$/.test(val("email"))) { setError("email", "Check the email address."); ok = false; } else setError("email");
+    if (!ok) { form.querySelector('[aria-invalid="true"]').focus(); return; }
+    var body = ["Name: " + val("name"), "Phone: " + val("phone"), val("email") ? "Email: " + val("email") : null,
+      "I'm a: " + val("type"), "Service: " + val("service"), val("area") ? "Property: " + val("area") : null,
+      val("details") ? "\nDetails:\n" + val("details") : null].filter(Boolean).join("\n");
+    readyText.textContent = body;
+    mailLink.href = "mailto:info@rapid-renewal.com?subject=" + encodeURIComponent("Estimate request: " + val("service")) + "&body=" + encodeURIComponent(body);
+    parts.forEach(function (el) { el.hidden = true; });
+    ready.hidden = false; copyStatus.textContent = "";
+  });
+  document.getElementById("edit-btn").addEventListener("click", function () {
+    ready.hidden = true; parts.forEach(function (el) { el.hidden = false; });
+    document.getElementById("f-name").focus();
+  });
+  document.getElementById("copy-btn").addEventListener("click", function () {
+    var text = "To: info@rapid-renewal.com\n\n" + readyText.textContent;
+    var fail = function () { copyStatus.textContent = "Copy isn't available here. Select the text above and copy it."; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { copyStatus.textContent = "Copied. Paste it into an email to info@rapid-renewal.com."; }, fail);
+    } else fail();
+  });
+})();
+
+</script>
+</body>
+</html>
